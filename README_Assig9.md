@@ -1,15 +1,14 @@
-#**Assignment 8: Supervised Learning Classification**
+# **Assignment 9: Unsupervised Learning - Customer Segmentation**
 - **Course:** Data Analytics and Business Intelligence Analyst
 - **Institution:** Willis College
-- **Student Name:**  Carlos Reyes
+- **Student Name:** Carlos Reyes
 - **Instructor:** Ratinder Rajpal
-- **Date:** 2025 Nov, 07
+- **Date:** 2025 Nov, 08
 
-
-# Parkinson's Disease Classification
+# Mall Customer Segmentation
 
 ## Project Description
-This machine learning project predicts Parkinson's disease diagnosis using clinical and demographic data. The analysis compares K-Nearest Neighbors vs Logistic Regression models, with Logistic Regression achieving **80% accuracy** and **84.2% F1-score**. The project includes comprehensive EDA, model evaluation, and prediction capabilities.
+This unsupervised learning project segments mall customers into distinct groups based on their demographics and spending behavior. The analysis compares K-Means vs Hierarchical Clustering models, identifying **3 optimal customer segments**. The project includes comprehensive EDA, clustering optimization, and customer profiling.
 
 ## Quick Setup & Run (Google Colab)
 
@@ -18,7 +17,7 @@ This machine learning project predicts Parkinson's disease diagnosis using clini
 2. Sign in with your Google account
 
 ### Step 2: Upload and Open Notebook
-1. Download `Lesson_8_assignment.ipynb` to your computer
+1. Download `Lesson_9_assignment.ipynb` to your computer
 2. In Colab, click **File → Upload notebook**
 3. Select the downloaded `.ipynb` file
 4. Click **Open**
@@ -27,29 +26,47 @@ This machine learning project predicts Parkinson's disease diagnosis using clini
 1. Click **Runtime → Run all** (or press `Ctrl+F9`)
 2. Wait for all cells to execute automatically
 3. The notebook will:
-   - Load dataset from GitHub
-   - Perform data cleaning and EDA
-   - Train both ML models
-   - Generate performance metrics and charts
-   - Save the best model as `.pkl` files
+   - Load Mall Customers dataset from GitHub
+   - Perform data preprocessing and scaling
+   - Apply K-Means and Hierarchical Clustering
+   - Determine optimal clusters using Elbow Method
+   - Generate customer segmentation visualizations
+   - Create PCA plots for dimensionality reduction
 
 ## Dataset Source
 - **Location**: GitHub repository
 - **Automatically loaded** from: 
-  `https://raw.githubusercontent.com/cmreyesvalencia-png/colab-git-assignment2-CR/main/parkinsons_disease_data.csv`
+  `https://raw.githubusercontent.com/cmreyesvalencia-png/colab-git-assignment2-CR/main/Mall_Customers.csv`
+- **Size**: 200 customer records
+- **Features**: Age, Annual Income, Spending Score, Gender
 
 ## No Installation Required
 Google Colab provides all required libraries pre-installed:
 - pandas, numpy, matplotlib, seaborn
-- scikit-learn, joblib
+- scikit-learn for clustering algorithms
+- StandardScaler for feature normalization
 
 ## Results Preview
-- **Best Model**: Logistic Regression (80% accuracy)
-- **Key Metrics**: Precision: 82.7%, Recall: 85.8%
-- **Output**: Saved model files and comprehensive visualizations
+- **Optimal Clusters**: 3 distinct customer segments
+- **Best Model**: K-Means (Silhouette Score: 0.368)
+- **Key Insights**: Clear customer groups based on income and spending patterns
+- **Visualizations**: Elbow curve, PCA plots, cluster distributions
+
+## Model Performance Summary
+| Model | Clusters | Silhouette Score | Best Use Case |
+|-------|----------|------------------|---------------|
+| K-Means | 3 | 0.368 | Customer segmentation |
+| Hierarchical | 3 | 0.363 | Cluster hierarchy visualization |
+
+## Business Applications
+- **Targeted Marketing**: Customized campaigns for each customer segment
+- **Product Placement**: Optimize store layout based on customer profiles
+- **Customer Retention**: Develop loyalty programs for high-value segments
+- **Inventory Management**: Stock products matching segment preferences
 
 ## Troubleshooting
 - If any cell fails: Click the play button ▶️ to re-run it
 - Ensure you're signed into Google Colab
 - Internet connection required for dataset download
-
+- Check that all libraries load properly in first cell
+- For visualization issues: Restart runtime and run again
